@@ -4,9 +4,6 @@
   --button-color: #0e1a58;
   --light-gray-color: #bdbdbd;
   --text-color: #fafafa;
-
-  --gradient: linear-gradient(to bottom, #1a1a2d, #4759b0);
-  --gradient1: linear-gradient(135deg, #d0b2e4 0%, #4751da 100%);
 }
 
 * {

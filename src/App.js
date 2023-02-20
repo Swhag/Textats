@@ -1,10 +1,10 @@
 import './App.css';
-import TextCounter from './components/TextCounter';
+import TextAnalyer from './components/TextAnalyer';
 
 function App() {
   return (
     <div className='App'>
-      <TextCounter></TextCounter>
+      <TextAnalyer></TextAnalyer>
     </div>
   );
 }
