@@ -47,11 +47,14 @@ function TextAnalyzer() {
       {letterCounts && (
         <div className='letter-counts'>
           <h3>Letter Counts</h3>
-          {Object.entries(letterCounts).map(([letter, count]) => (
-            <div key={letter}>
-              {letter}: {count}
-            </div>
-          ))}
+          {Object.entries(letterCounts)
+            .slice()
+            .sort()
+            .map(([letter, count]) => (
+              <div key={letter}>
+                {letter}: {count}
+              </div>
+            ))}
         </div>
       )}
     </div>
