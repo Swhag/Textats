@@ -5,11 +5,12 @@ import TextField from './TextField';
 import CounterGroup from './CounterGroup';
 import LetterCounts from './LetterCounts';
 
+// takes textValue and returns filtered array of alphabet letters
 function filterLetters(textValue) {
   const letterArray = [];
 
   for (let i = 0; i < textValue.length; i++) {
-    const char = textValue.charAt(i).toUpperCase();
+    const char = textValue[i].toUpperCase();
     if (char >= 'A' && char <= 'Z') {
       letterArray.push(char);
     }
@@ -17,7 +18,8 @@ function filterLetters(textValue) {
   return letterArray;
 }
 
-function countLetters(textValue) {
+// counts the occurrence of each letter
+function getLetterCount(textValue) {
   const filteredText = filterLetters(textValue);
   const letterCount = {};
 
@@ -33,13 +35,13 @@ function countLetters(textValue) {
 }
 
 function getLetterStats(textValue) {
-  const counts = countLetters(textValue);
+  const counts = getLetterCount(textValue);
   const totalLetters = filterLetters(textValue).length;
   const letters = Object.keys(counts);
   const result = [];
 
-  for (let j = 0; j < letters.length; j++) {
-    const letter = letters[j];
+  for (let i = 0; i < letters.length; i++) {
+    const letter = letters[i];
     const count = counts[letter];
     const letterPercentage = (count / totalLetters) * 100;
 
