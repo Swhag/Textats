@@ -5,36 +5,26 @@ import TextField from './TextField';
 import CounterGroup from './CounterGroup';
 import LetterCounts from './LetterCounts';
 
-function filterLetters(textValue) {
-  const letterArray = [];
+function getCounts(textValue) {
+  const lowerCaseText = textValue.toLowerCase();
+  const characters = lowerCaseText.split('');
+  const letters = characters.filter((char) => /[a-z]/.test(char));
 
-  for (let i = 0; i < textValue.length; i++) {
-    const char = textValue.charAt(i).toUpperCase();
-    if (char >= 'A' && char <= 'Z') {
-      letterArray.push(char);
+  const counts = {};
+  for (let i = 0; i < letters.length; i++) {
+    const letter = letters[i];
+    if (counts[letter] === undefined) {
+      counts[letter] = 0;
     }
+    counts[letter]++;
   }
-  return letterArray;
-}
 
-function countLetters(textValue) {
-  const filteredText = filterLetters(textValue);
-  const letterCount = {};
-
-  for (let i = 0; i < filteredText.length; i++) {
-    const letter = filteredText[i];
-    if (letterCount[letter] === undefined) {
-      letterCount[letter] = 1;
-    } else {
-      letterCount[letter]++;
-    }
-  }
-  return letterCount;
+  return counts;
 }
 
 function getLetterStats(textValue) {
-  const counts = countLetters(textValue);
-  const totalLetters = filterLetters(textValue).length;
+  const counts = getCounts(textValue);
+  const totalLetters = textValue.replace(/[^a-zA-Z]/g, '').length;
   const letters = Object.keys(counts);
   const result = [];
 
