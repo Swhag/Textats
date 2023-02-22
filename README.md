@@ -1,3 +1,3 @@
-# Getting Started with Create React App
+# Textats - Text Analyzer
 
 Text analyzer app (In-progress)
