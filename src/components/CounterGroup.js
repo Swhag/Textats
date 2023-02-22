@@ -1,4 +1,5 @@
 import React from 'react';
+import '../styles/counterGroup.css';
 
 function CounterGroup(props) {
   const { text } = props;
@@ -9,9 +10,15 @@ function CounterGroup(props) {
 
   return (
     <div className='counter-group'>
-      <div>Characters: {charCount}</div>
-      <div>Words: {wordCount}</div>
-      <div>Lines: {lineCount}</div>
+      <div className='label'>
+        Characters: <span className='counter'>{charCount}</span>
+      </div>
+      <div className='label'>
+        Words: <span className='counter'>{wordCount}</span>
+      </div>
+      <div className='label'>
+        Lines: <span className='counter'>{lineCount}</span>
+      </div>
     </div>
   );
 }

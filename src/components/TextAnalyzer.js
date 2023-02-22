@@ -1,9 +1,13 @@
 import React, { useState } from 'react';
-import '../styles/textCounter.css';
+import '../styles/TextAnalyzer.css';
 
 import TextField from './TextField';
 import CounterGroup from './CounterGroup';
-import LetterCounts from './LetterCounts';
+import LetterStatsGroup from './letterStats';
+
+// --------------------------------------------------------------------
+// JavaScript functions
+// --------------------------------------------------------------------
 
 // takes textValue and returns filtered array of alphabet letters
 function filterLetters(textValue) {
@@ -34,6 +38,7 @@ function getLetterCount(textValue) {
   return letterCount;
 }
 
+// Calculates and returns the letter count and percentage of each letter as an array of arrays.
 function getLetterStats(textValue) {
   const counts = getLetterCount(textValue);
   const totalLetters = filterLetters(textValue).length;
@@ -51,16 +56,20 @@ function getLetterStats(textValue) {
   return result;
 }
 
+// --------------------------------------------------------------------
+// React Components
+// --------------------------------------------------------------------
+
 function TextAnalyzer() {
   const [text, setText] = useState('');
-  const [letterCounts, setLetterCounts] = useState(null);
+  const [letterStats, setLetterStats] = useState([]);
 
   function handleTextChange(event) {
     const textValue = event.target.value;
     setText(textValue);
 
-    const counts = getLetterStats(textValue);
-    setLetterCounts(counts);
+    const stats = getLetterStats(textValue);
+    setLetterStats(stats);
   }
 
   return (
@@ -68,7 +77,7 @@ function TextAnalyzer() {
       <h2>Text Analyzer</h2>
       <TextField text={text} handleTextChange={handleTextChange} />
       <CounterGroup text={text} />
-      {letterCounts && <LetterCounts letterCounts={letterCounts} />}
+      <LetterStatsGroup letterStats={letterStats} />
     </div>
   );
 }

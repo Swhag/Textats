@@ -1,0 +1,8 @@
+.counter-group {
+  display: flex;
+  gap: 1rem;
+}
+
+.label {
+  background-color: blue;
+}
