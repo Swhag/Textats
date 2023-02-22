@@ -3,13 +3,14 @@ import '../styles/TextAnalyzer.css';
 
 import TextField from './TextField';
 import CounterGroup from './CounterGroup';
-import LetterStatsGroup from './letterStats';
+import LetterChart from './LetterChart';
+import LetterStats from './LetterStats';
 
 // --------------------------------------------------------------------
 // JavaScript functions
 // --------------------------------------------------------------------
 
-// takes textValue and returns filtered array of alphabet letters
+// takes textValue and returns filtered array of letters (alphabet only)
 function filterLetters(textValue) {
   const letterArray = [];
 
@@ -38,7 +39,7 @@ function getLetterCount(textValue) {
   return letterCount;
 }
 
-// Calculates and returns the letter count and percentage of each letter as an array of arrays.
+// calculates and returns the letter count and percentage of each letter as an array of arrays.
 function getLetterStats(textValue) {
   const counts = getLetterCount(textValue);
   const totalLetters = filterLetters(textValue).length;
@@ -56,6 +57,17 @@ function getLetterStats(textValue) {
   return result;
 }
 
+// takes textValue returns an array of words
+function getWords(textValue) {
+  // split the text into an array of words
+  const wordsArray = textValue
+    .replace(/[^\w\s]/gi, '')
+    .toLowerCase()
+    .split(/\s+/);
+
+  return wordsArray;
+}
+
 // --------------------------------------------------------------------
 // React Components
 // --------------------------------------------------------------------
@@ -70,6 +82,8 @@ function TextAnalyzer() {
 
     const stats = getLetterStats(textValue);
     setLetterStats(stats);
+
+    console.log(getWords(textValue));
   }
 
   return (
@@ -77,7 +91,8 @@ function TextAnalyzer() {
       <h2>Text Analyzer</h2>
       <TextField text={text} handleTextChange={handleTextChange} />
       <CounterGroup text={text} />
-      <LetterStatsGroup letterStats={letterStats} />
+      <LetterChart letterStats={letterStats} />
+      <LetterStats letterStats={letterStats} />
     </div>
   );
 }

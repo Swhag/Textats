@@ -1,12 +1,13 @@
 .counter-group {
   display: flex;
+  flex-wrap: wrap;
   gap: 1rem;
   margin-bottom: 1.4rem;
 }
 
 .label {
-  background-color: #039be5;
-  color: var(--text-color);
+  background-color: var(--skyblue);
+  color: #fff;
   padding: 8px 14px;
   border-radius: 5px;
 }

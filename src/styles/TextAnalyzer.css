@@ -3,7 +3,7 @@
   width: 100%;
   max-width: 1000px;
 
-  padding: 1.5rem 2.5rem;
+  padding: 1.5rem;
 
   display: flex;
   flex-direction: column;
@@ -16,6 +16,7 @@
   text-align: center;
   letter-spacing: 2px;
   margin-bottom: 1.5rem;
+  font-size: 2rem;
 }
 
 .text-analyzer textarea {
@@ -24,14 +25,12 @@
   outline: none;
   display: block;
 
-  width: 100%;
-  height: 15rem;
+  min-width: 100%;
+  max-width: 100%;
+  min-height: 15rem;
 
-  color: var(--primary-color);
   padding: 0.7rem;
   font-size: 1rem;
 
   margin-bottom: 1.5rem;
-
-  resize: none;
 }
