@@ -1,5 +1,4 @@
 import React from 'react';
-import '../styles/LetterStats.css';
 
 function LetterStats(props) {
   const { letterStats } = props;

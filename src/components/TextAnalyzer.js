@@ -4,7 +4,7 @@ import '../styles/TextAnalyzer.css';
 import TextField from './TextField';
 import CounterGroup from './CounterGroup';
 import LetterChart from './LetterChart';
-import LetterStats from './LetterStats';
+import Stats from './Stats';
 
 // --------------------------------------------------------------------
 // JavaScript functions
@@ -39,7 +39,7 @@ function getLetterCount(textValue) {
   return letterCount;
 }
 
-// calculates and returns the letter count and percentage of each letter as an array of arrays.
+// calculates the letter count and percentage of each letter as an array of arrays.
 function getLetterStats(textValue) {
   const counts = getLetterCount(textValue);
   const totalLetters = filterLetters(textValue).length;
@@ -83,6 +83,24 @@ function countWordOccurrences(textValue) {
   return wordCounts;
 }
 
+// calculates the percentage of each unique word
+function getWordStats(textValue) {
+  const wordCounts = countWordOccurrences(textValue);
+  const totalWords = getWords(textValue).length;
+  const words = Object.keys(wordCounts);
+  const result = [];
+
+  for (let i = 0; i < words.length; i++) {
+    const word = words[i];
+    const count = wordCounts[word];
+    const wordPercentage = (count / totalWords) * 100;
+
+    result.push([word, count, wordPercentage]);
+  }
+
+  return result;
+}
+
 // --------------------------------------------------------------------
 // React Components
 // --------------------------------------------------------------------
@@ -90,15 +108,17 @@ function countWordOccurrences(textValue) {
 function TextAnalyzer() {
   const [text, setText] = useState('');
   const [letterStats, setLetterStats] = useState([]);
+  const [wordStats, setWordStats] = useState([]);
 
   function handleTextChange(event) {
     const textValue = event.target.value;
     setText(textValue);
 
-    const stats = getLetterStats(textValue);
-    setLetterStats(stats);
+    const LStats = getLetterStats(textValue);
+    setLetterStats(LStats);
 
-    console.log(countWordOccurrences(textValue));
+    const WStats = getWordStats(textValue);
+    setWordStats(WStats);
   }
 
   return (
@@ -107,7 +127,7 @@ function TextAnalyzer() {
       <TextField text={text} handleTextChange={handleTextChange} />
       <CounterGroup text={text} />
       <LetterChart letterStats={letterStats} />
-      <LetterStats letterStats={letterStats} />
+      <Stats letterStats={letterStats} wordStats={wordStats} />
     </div>
   );
 }

@@ -20,7 +20,7 @@ function CounterGroup(props) {
         Characters: <span className='counter'>{charCount}</span>
       </div>
       <div className='label'>
-        Characters (No Space):
+        Characters (No Spaces):
         <span className='counter'>{charCountWithoutSpaces}</span>
       </div>
       <div className='label'>

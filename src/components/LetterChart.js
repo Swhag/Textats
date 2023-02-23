@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
-import '../styles/LetterStats.css';
+import '../styles/Stats.css';
+
 import { Bar } from 'react-chartjs-2';
 import Chart from 'chart.js/auto';
 
