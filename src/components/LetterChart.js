@@ -88,7 +88,9 @@ function LetterChart(props) {
         </select>
       </div>
 
-      <Bar data={data} options={options} />
+      <div className='letter-stats-chart'>
+        <Bar data={data} options={options} />
+      </div>
     </div>
   );
 }
