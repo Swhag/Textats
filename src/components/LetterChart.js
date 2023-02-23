@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import '../styles/LetterChart.css';
+import '../styles/LetterStats.css';
 import { Bar } from 'react-chartjs-2';
 import Chart from 'chart.js/auto';
 
@@ -70,27 +70,28 @@ function LetterChart(props) {
 
   // Render the Bar chart
   return (
-    <div className='letter-stats'>
-      <div className='letter-stats-header'>
+    <div className='letter-chart'>
+      <div className='letter-chart-header'>
         <h3>Letter Stats</h3>
-        <select
-          className='selectPicker'
-          value={sortOption}
-          onChange={(e) => {
-            setSortOption(e.target.value);
-          }}
-        >
-          {sortArray.map((option, i) => (
-            <option key={i} value={option}>
-              {option}
-            </option>
-          ))}
-        </select>
+        <div>
+          <label>Sort By:</label>
+          <select
+            className='selectPicker'
+            value={sortOption}
+            onChange={(e) => {
+              setSortOption(e.target.value);
+            }}
+          >
+            {sortArray.map((option, i) => (
+              <option key={i} value={option}>
+                {option}
+              </option>
+            ))}
+          </select>
+        </div>
       </div>
 
-      <div className='letter-stats-chart'>
-        <Bar data={data} options={options} />
-      </div>
+      <Bar data={data} options={options} />
     </div>
   );
 }

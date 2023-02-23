@@ -4,14 +4,24 @@ import '../styles/counterGroup.css';
 function CounterGroup(props) {
   const { text } = props;
 
-  const wordCount = text.trim().split(/\s+/).length;
-  const lineCount = text.split('\n').length;
-  const charCount = text.length;
+  // if text is equal to " ", then wordCount word and line count is set to 0 instead of 1
+  const words = text.trim().split(/\s+/);
+  const lines = text.split('\n');
+  const charCount = text.length.toLocaleString();
+  const charCountWithoutSpaces = text
+    .replace(/\s/g, '')
+    .length.toLocaleString();
+  const wordCount = words[0] === '' ? 0 : words.length.toLocaleString();
+  const lineCount = lines[0] === '' ? 0 : lines.length.toLocaleString();
 
   return (
     <div className='counter-group'>
       <div className='label'>
         Characters: <span className='counter'>{charCount}</span>
+      </div>
+      <div className='label'>
+        Characters (No Space):
+        <span className='counter'>{charCountWithoutSpaces}</span>
       </div>
       <div className='label'>
         Words: <span className='counter'>{wordCount}</span>
