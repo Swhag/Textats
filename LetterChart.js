@@ -1,48 +1,30 @@
 import React, { useState } from 'react';
-import '../styles/LetterChart.css';
 import { Bar } from 'react-chartjs-2';
 import Chart from 'chart.js/auto';
 
-// --------------------------------------------------------------------
-// JavaScript functions
-// --------------------------------------------------------------------
-
-const handleSortChange = (stats, sortOption) => {
-  if (sortOption === 'A-Z') {
-    return stats.sort(([a], [b]) => {
-      if (a < b) {
-        return -1;
-      }
-      if (a > b) {
-        return 1;
-      }
-      return 0;
-    });
+const sortHighToLow = array.sort(([a], [b]) => {
+  if (a < b) {
+    return -1;
   }
-
-  if (sortOption === 'High to Low') {
-    return stats.sort((a, b) => b[1] - a[1]);
+  if (a > b) {
+    return 1;
   }
+  return 0;
+});
 
-  if (sortOption === 'Low to High') {
-    return stats.sort((a, b) => a[1] - b[1]);
-  }
+function sortByAlphabet(array) {
+  array.sort((a, b) => b[1] - a[1]);
+}
 
-  // Return the original stats array if the sortOption is invalid
-  return stats;
-};
+const sortByAlphabet = array.sort((a, b) => b[1] - a[1]);
 
-// --------------------------------------------------------------------
-// React Components
-// --------------------------------------------------------------------
 function LetterChart(props) {
   const { letterStats } = props;
-  const sortArray = ['A-Z', 'Low to High', 'High to Low'];
 
   let [sortOption, setSortOption] = useState('A-Z');
+  let [sortedStats, sertSortedStats] = useState(sortByAlphabet);
 
-  // Set sortedStats based on sortOption
-  const sortedStats = handleSortChange(letterStats, sortOption);
+  const sortArray = ['A-Z', 'High to Low', 'Low to High'];
 
   // Define the data for the chart
   const data = {
@@ -76,9 +58,7 @@ function LetterChart(props) {
         <select
           className='selectPicker'
           value={sortOption}
-          onChange={(e) => {
-            setSortOption(e.target.value);
-          }}
+          onChange={(e) => {}}
         >
           {sortArray.map((option, i) => (
             <option key={i} value={option}>
