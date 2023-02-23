@@ -59,13 +59,28 @@ function getLetterStats(textValue) {
 
 // takes textValue returns an array of words
 function getWords(textValue) {
-  // split the text into an array of words
   const wordsArray = textValue
     .replace(/[^\w\s]/gi, '')
     .toLowerCase()
     .split(/\s+/);
 
   return wordsArray;
+}
+
+// counts the occurrences of each unique word
+function countWordOccurrences(textValue) {
+  const wordsArray = getWords(textValue);
+  const wordCounts = {};
+
+  for (let i = 0; i < wordsArray.length; i++) {
+    const word = wordsArray[i];
+    if (wordCounts[word] === undefined) {
+      wordCounts[word] = 1;
+    } else {
+      wordCounts[word]++;
+    }
+  }
+  return wordCounts;
 }
 
 // --------------------------------------------------------------------
@@ -83,7 +98,7 @@ function TextAnalyzer() {
     const stats = getLetterStats(textValue);
     setLetterStats(stats);
 
-    console.log(getWords(textValue));
+    console.log(countWordOccurrences(textValue));
   }
 
   return (
