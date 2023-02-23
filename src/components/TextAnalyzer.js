@@ -109,16 +109,21 @@ function TextAnalyzer() {
   const [text, setText] = useState('');
   const [letterStats, setLetterStats] = useState([]);
   const [wordStats, setWordStats] = useState([]);
+  const [uniqueWords, setUniqueWords] = useState([]);
 
   function handleTextChange(event) {
     const textValue = event.target.value;
     setText(textValue);
 
-    const LStats = getLetterStats(textValue);
-    setLetterStats(LStats);
+    const LetterStats = getLetterStats(textValue);
+    setLetterStats(LetterStats);
 
-    const WStats = getWordStats(textValue);
-    setWordStats(WStats);
+    const WordStats = getWordStats(textValue);
+    setWordStats(WordStats);
+
+    const wordsArray = getWords(textValue);
+    const uniqueWordsArray = [...new Set(wordsArray)];
+    setUniqueWords(uniqueWordsArray);
   }
 
   return (
@@ -127,7 +132,11 @@ function TextAnalyzer() {
       <TextField text={text} handleTextChange={handleTextChange} />
       <CounterGroup text={text} />
       <LetterChart letterStats={letterStats} />
-      <Stats letterStats={letterStats} wordStats={wordStats} />
+      <Stats
+        letterStats={letterStats}
+        wordStats={wordStats}
+        uniqueWords={uniqueWords}
+      />
     </div>
   );
 }

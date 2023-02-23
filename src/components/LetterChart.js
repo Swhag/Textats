@@ -36,6 +36,7 @@ const handleSortChange = (stats, sortOption) => {
 // --------------------------------------------------------------------
 // React Components
 // --------------------------------------------------------------------
+
 function LetterChart(props) {
   const { letterStats } = props;
   const sortArray = ['A-Z', 'Low to High', 'High to Low'];

@@ -13,6 +13,7 @@
 
 .stats-container {
   display: flex;
+  justify-content: space-between;
 }
 
 @media (max-width: 768px) {
@@ -22,11 +23,11 @@
   }
 }
 
-.letter-stats {
+.stats {
   border: 1px solid #bdbdbd;
   margin-top: 1.4rem;
 
-  width: 25%;
+  width: 31%;
   max-height: 400px;
 
   padding: 10px;
@@ -34,16 +35,16 @@
 }
 
 @media (max-width: 768px) {
-  .letter-stats {
+  .stats {
     width: 100%;
   }
 }
 
-.letter-stats h3 {
+.stats h3 {
   margin-bottom: 1rem;
 }
 
-.letter-stats-wrapper {
+.stats-wrapper {
   border-bottom: 1px solid #bdbdbd;
   display: flex;
   justify-content: space-between;
@@ -51,13 +52,13 @@
   padding: 10px 0;
 }
 
-.letter-stats-count {
+.stats-count {
   border-radius: 5px;
   padding: 6px 10px;
   background-color: var(--skyblue);
   color: #fff;
 }
 
-.letter-stats-count .percent {
+.stats-count .percent {
   margin-left: 10px;
 }
