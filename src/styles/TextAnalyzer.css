@@ -1,27 +1,23 @@
 .text-analyzer {
-  border: 1px solid #bdbdbd;
   width: 100%;
-  max-width: 1500px;
-
-  padding: 3rem;
-
-  display: flex;
-  flex-direction: column;
+  max-width: 80%;
   border-radius: 5px;
 
-  margin: 0 auto;
+  margin: 50px auto;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 1024px) {
   .text-analyzer {
-    padding: 1rem;
+    padding: 1.2rem;
+    max-width: 100%;
+    margin: 20px auto;
   }
 }
 
 .text-analyzer h2 {
   text-align: center;
   letter-spacing: 2px;
-  margin-bottom: 1.5rem;
+  margin-bottom: 3rem;
   font-size: 2rem;
 }
 
@@ -34,10 +30,44 @@
 
   min-width: 100%;
   max-width: 100%;
-  min-height: 15rem;
+  min-height: 30rem;
 
   padding: 0.7rem;
   font-size: 1rem;
 
   margin-bottom: 1.5rem;
+}
+
+.content-container {
+  border: 1px solid #bdbdbd;
+  padding: 2rem 1rem;
+
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+}
+
+.content-left {
+  width: 55%;
+}
+
+.content-right {
+  width: 40%;
+}
+
+@media (max-width: 768px) {
+  .content-container {
+    border: none;
+    padding: 0rem;
+    flex-direction: column;
+  }
+
+  .content-left {
+    width: 100%;
+  }
+
+  .content-right {
+    width: 100%;
+  }
 }

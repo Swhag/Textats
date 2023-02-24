@@ -6,8 +6,11 @@ function Stats(props) {
 
   return (
     <div className='stats-container'>
-      <LetterStats letterStats={letterStats} />
-      <WordStats wordStats={wordStats} />
+      <div className='stats-group'>
+        <LetterStats letterStats={letterStats} />
+        <WordStats wordStats={wordStats} />
+      </div>
+
       <WordStatsLength uniqueWords={uniqueWords} />
     </div>
   );
@@ -19,7 +22,7 @@ function LetterStats(props) {
   const sortedStats = letterStats.sort((a, b) => b[1] - a[1]);
 
   return (
-    <div className='stats'>
+    <div className='stats w-40'>
       <h3>Letter Density</h3>
       {sortedStats.map(([letter, count, percent]) => (
         <div className='stats-wrapper' key={letter}>
@@ -39,7 +42,7 @@ function WordStats(props) {
   const sortedStats = wordStats.sort((a, b) => b[1] - a[1]);
 
   return (
-    <div className='stats'>
+    <div className='stats w-60'>
       <h3>Keyword Density</h3>
       {sortedStats.map(([word, count, percent]) => (
         <div className='stats-wrapper' key={word}>
@@ -75,7 +78,7 @@ function WordStatsLength(props) {
   });
 
   return (
-    <div className='stats'>
+    <div className='stats w-100'>
       <h3>Words by Length</h3>
       {sortedWords.map((word, index) => (
         <div className='stats-wrapper' key={index}>
