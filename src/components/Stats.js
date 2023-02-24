@@ -40,11 +40,10 @@ function WordStats(props) {
 
   return (
     <div className='stats'>
-      <h3>Word Density</h3>
-
-      {sortedStats.map(([Word, count, percent]) => (
-        <div className='stats-wrapper' key={Word}>
-          <div>{Word} </div>
+      <h3>Keyword Density</h3>
+      {sortedStats.map(([word, count, percent]) => (
+        <div className='stats-wrapper' key={word}>
+          <div className='stats-word'>{word} </div>
           <div className='stats-count'>
             {count.toLocaleString()}
             <span className='percent'>({percent.toFixed(2)}%)</span>
@@ -80,7 +79,7 @@ function WordStatsLength(props) {
       <h3>Words by Length</h3>
       {sortedWords.map((word, index) => (
         <div className='stats-wrapper' key={index}>
-          <div>{word} </div>
+          <div className='stats-word'>{word} </div>
           <div className='stats-count'>{word.length} Letters</div>
         </div>
       ))}

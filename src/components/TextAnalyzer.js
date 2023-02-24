@@ -67,9 +67,40 @@ function getWords(textValue) {
   return wordsArray;
 }
 
+// takes an array of words and filters out stop words
+function filterWords(textValue) {
+  const stopWords = [
+    'a',
+    'an',
+    'and',
+    'as',
+    'at',
+    'be',
+    'but',
+    'by',
+    'for',
+    'if',
+    'in',
+    'is',
+    'it',
+    'of',
+    'on',
+    'or',
+    'so',
+    'the',
+    'to',
+    'with',
+    // Add more as needed
+  ];
+  const wordsArray = getWords(textValue);
+
+  const filteredArray = wordsArray.filter((word) => !stopWords.includes(word));
+  return filteredArray;
+}
+
 // counts the occurrences of each unique word
 function countWordOccurrences(textValue) {
-  const wordsArray = getWords(textValue);
+  const wordsArray = filterWords(textValue);
   const wordCounts = {};
 
   for (let i = 0; i < wordsArray.length; i++) {

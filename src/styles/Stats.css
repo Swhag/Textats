@@ -7,6 +7,8 @@
 
 .selectPicker {
   margin-left: 8px;
+  padding: 6px;
+  font-size: 0.9rem;
 }
 
 /* ---------------------------------------- */
@@ -50,6 +52,13 @@
   justify-content: space-between;
   align-items: center;
   padding: 10px 0;
+}
+
+.stats-word {
+  width: 60%;
+
+  word-wrap: break-word;
+  margin-right: 10px;
 }
 
 .stats-count {
