@@ -17,17 +17,17 @@ function CounterGroup(props) {
   return (
     <div className='counter-group'>
       <div className='label'>
-        Characters: <span className='counter'>{charCount}</span>
+        Characters:<span className='counter'>{charCount}</span>
       </div>
       <div className='label'>
         Characters (No Spaces):
         <span className='counter'>{charCountWithoutSpaces}</span>
       </div>
       <div className='label'>
-        Words: <span className='counter'>{wordCount}</span>
+        Words:<span className='counter'>{wordCount}</span>
       </div>
       <div className='label'>
-        Lines: <span className='counter'>{lineCount}</span>
+        Lines:<span className='counter'>{lineCount}</span>
       </div>
     </div>
   );

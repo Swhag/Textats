@@ -5,6 +5,7 @@ import TextField from './TextField';
 import CounterGroup from './CounterGroup';
 import LetterChart from './LetterChart';
 import Stats from './Stats';
+import TextSummarizer from './TextSummarizer';
 
 // --------------------------------------------------------------------
 // JavaScript functions
@@ -160,14 +161,23 @@ function TextAnalyzer() {
   return (
     <div className='text-analyzer'>
       <h2>Text Analyzer</h2>
-      <TextField text={text} handleTextChange={handleTextChange} />
-      <CounterGroup text={text} />
-      <LetterChart letterStats={letterStats} />
-      <Stats
-        letterStats={letterStats}
-        wordStats={wordStats}
-        uniqueWords={uniqueWords}
-      />
+
+      <div className='content-container'>
+        <div className='content-left'>
+          <TextField text={text} handleTextChange={handleTextChange} />
+          <CounterGroup text={text} />
+          <TextSummarizer text={text} />
+        </div>
+
+        <div className='content-right'>
+          <LetterChart letterStats={letterStats} />
+          <Stats
+            letterStats={letterStats}
+            wordStats={wordStats}
+            uniqueWords={uniqueWords}
+          />
+        </div>
+      </div>
     </div>
   );
 }

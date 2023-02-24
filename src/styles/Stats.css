@@ -1,3 +1,13 @@
+.letter-chart {
+  max-width: 50%;
+}
+
+@media (max-width: 768px) {
+  .letter-chart {
+    max-width: 100%;
+  }
+}
+
 .letter-chart-header {
   display: flex;
   justify-content: space-between;
