@@ -49,8 +49,11 @@ function LetterChart(props) {
   const color = 'rgba(0, 0, 0, 0.6)';
   const labelColor = 'rgba(0, 0, 0, 1)';
   const gridColor = 'rgba(0, 0, 0, 0.3)';
-  const backgroundColor = 'rgba(54, 162, 235, 0.3)';
-  const borderColor = 'rgba(54, 162, 235, 1)';
+  // const backgroundColor = 'rgba(54, 162, 235, 0.3)';
+  // const borderColor = 'rgba(54, 162, 235, 1)';
+
+  const backgroundColor = 'rgba(50,205,50, 0.4)';
+  const borderColor = 'rgba(50,205,50, 1)';
 
   // Define the data for the chart
   const data = {

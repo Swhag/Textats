@@ -21,37 +21,35 @@
 
 /* ---------------------------------------- */
 
-.stats-container {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  width: 100%;
-}
-
-@media (max-width: 768px) {
-  .stats-container {
-    display: flex;
-    flex-direction: column;
-    width: 100%;
-  }
-}
-
 .stats-group {
   width: 100%;
   display: flex;
   gap: 1rem;
 }
 
-.stats {
-  border: 1px solid var(--border);
+.stats-container {
   background-color: var(--item-background);
+  border: 1px solid var(--border);
+
+  width: 100%;
   margin-top: 1.4rem;
-  min-height: 300px;
-  max-height: 400px;
-  padding: 10px;
-  width: 50%;
+  padding: 0px 0px 5px 5px;
+
   border-radius: 15px;
   box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.stats-container h3 {
+  text-align: center;
+  padding-top: 8px;
+}
+
+.stats {
+  background-color: transparent;
+  min-height: 300px;
+  max-height: 400px;
+  width: 100%;
+  padding: 10px;
 
   overflow-y: scroll;
 }
@@ -70,18 +68,6 @@
   }
 }
 
-.w-40 {
-  width: 40%;
-}
-
-.w-60 {
-  width: 60%;
-}
-
-.w-100 {
-  width: 100%;
-}
-
 @media (max-width: 1200px) {
   .stats-group {
     flex-direction: column;
@@ -91,13 +77,17 @@
   }
 }
 
+/* ---------------------------------------- */
+/* stats scroll styling */
+/* ---------------------------------------- */
+
 .stats::-webkit-scrollbar {
-  width: 1.2rem;
   background-color: var(--scroll-background);
+  width: 1.2rem;
+  border-radius: 8px;
 }
 
 .stats::-webkit-scrollbar-thumb {
-  background-color: #bbb;
   background-color: var(--scroll-bar);
   border-radius: 8px;
 }
@@ -106,11 +96,13 @@
   background-color: var(--scroll-bar-hover);
 }
 
+/* ---------------------------------------- */
+
 .stats h3 {
   margin-bottom: 1rem;
 }
 
-.stats-wrapper {
+.stats-block {
   border-bottom: 1px solid #bdbdbd;
   display: flex;
   justify-content: space-between;

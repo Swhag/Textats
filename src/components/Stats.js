@@ -5,7 +5,7 @@ function Stats(props) {
   const { letterStats, wordStats, uniqueWords } = props;
 
   return (
-    <div className='stats-container'>
+    <div className='stats-section'>
       <div className='stats-group'>
         <LetterStats letterStats={letterStats} />
         <WordStats wordStats={wordStats} />
@@ -22,17 +22,19 @@ function LetterStats(props) {
   const sortedStats = letterStats.sort((a, b) => b[1] - a[1]);
 
   return (
-    <div className='stats w-40'>
+    <div className='stats-container'>
       <h3>Letter Density</h3>
-      {sortedStats.map(([letter, count, percent]) => (
-        <div className='stats-wrapper' key={letter}>
-          <div className='stats-word'>{letter}: </div>
-          <div className='stats-count'>
-            {count.toLocaleString()}
-            <span className='percent'>({percent.toFixed(2)}%)</span>
+      <div className='stats'>
+        {sortedStats.map(([letter, count, percent]) => (
+          <div className='stats-block' key={letter}>
+            <div className='stats-word'>{letter}: </div>
+            <div className='stats-count'>
+              {count.toLocaleString()}
+              <span className='percent'>({percent.toFixed(2)}%)</span>
+            </div>
           </div>
-        </div>
-      ))}
+        ))}
+      </div>
     </div>
   );
 }
@@ -42,17 +44,19 @@ function WordStats(props) {
   const sortedStats = wordStats.sort((a, b) => b[1] - a[1]);
 
   return (
-    <div className='stats w-60'>
+    <div className='stats-container'>
       <h3>Keyword Density</h3>
-      {sortedStats.map(([word, count, percent]) => (
-        <div className='stats-wrapper' key={word}>
-          <div className='stats-word'>{word} </div>
-          <div className='stats-count'>
-            {count.toLocaleString()}
-            <span className='percent'>({percent.toFixed(2)}%)</span>
+      <div className='stats'>
+        {sortedStats.map(([word, count, percent]) => (
+          <div className='stats-block' key={word}>
+            <div className='stats-word'>{word} </div>
+            <div className='stats-count'>
+              {count.toLocaleString()}
+              <span className='percent'>({percent.toFixed(2)}%)</span>
+            </div>
           </div>
-        </div>
-      ))}
+        ))}
+      </div>
     </div>
   );
 }
@@ -78,14 +82,16 @@ function WordStatsLength(props) {
   });
 
   return (
-    <div className='stats w-100'>
+    <div className='stats-container'>
       <h3>Words by Length</h3>
-      {sortedWords.map((word, index) => (
-        <div className='stats-wrapper' key={index}>
-          <div className='stats-word'>{word} </div>
-          <div className='stats-count'>{word.length} Letters</div>
-        </div>
-      ))}
+      <div className='stats'>
+        {sortedWords.map((word, index) => (
+          <div className='stats-block' key={index}>
+            <div className='stats-word'>{word} </div>
+            <div className='stats-count'>{word.length} Letters</div>
+          </div>
+        ))}
+      </div>
     </div>
   );
 }

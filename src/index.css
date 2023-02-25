@@ -1,15 +1,16 @@
 :root {
   /* --border: #bdbdbd; */
 
+  --background: rgba(255, 255, 255, 0.3);
   --background: rgba(0, 0, 0, 0.1);
-  --background: rgba(255, 255, 255, 0.1);
+
+  --item-background: rgba(0, 0, 0, 0.2);
+  --item-background: rgba(255, 255, 255, 0.7);
 
   --font: rgba(0, 0, 0, 0.7);
   --item: rgba(13, 71, 161, 0.7);
-  --item-background: rgba(0, 0, 0, 0.2);
-  --item-background: rgba(255, 255, 255, 0.6);
 
-  --scroll-bar: rgba(13, 71, 161, 0.7);
+  --scroll-bar: rgba(13, 71, 161, 0.6);
   --scroll-bar-hover: rgba(13, 71, 161, 0.8);
   --scroll-background: rgba(0, 0, 0, 0.1);
 }
@@ -32,7 +33,14 @@ body {
     #c5cbf1
   );
 
-  background-color: rgb(52, 74, 114);
+  /* background-image: linear-gradient(
+    to right,
+    rgb(154, 154, 225),
+    rgb(0, 132, 161),
+    rgb(219, 0, 122)
+  ); */
+
+  background-color: rgba(154, 154, 225, 0.9);
   color: var(--font);
 }
 

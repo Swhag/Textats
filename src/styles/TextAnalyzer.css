@@ -18,6 +18,12 @@
   }
 }
 
+@media (max-width: 768px) {
+  .text-analyzer {
+    margin: 0px auto;
+  }
+}
+
 .text-analyzer h1 {
   text-align: center;
   letter-spacing: 2px;
@@ -69,10 +75,20 @@
 /* TextField Component styling */
 /* ---------------------------------------- */
 
-.text-field {
+.text-field-container {
   border: 2px solid var(--border);
   background-color: var(--item-background);
+  border-radius: 15px;
+  padding: 5px 0px 5px 5px;
+  margin-bottom: 1.5rem;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+}
 
+.text-field {
+  background-color: var(--item-background);
+  background-color: transparent;
+
+  border: none;
   outline: none;
   display: block;
 
@@ -80,24 +96,24 @@
   max-width: 100%;
   min-height: 30rem;
 
-  padding: 0.5rem;
-  font-size: 1.1rem;
+  padding: 0.3rem;
 
-  margin-bottom: 1.5rem;
-  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+  font-size: 1.1rem;
+  font-family: 'Open Sans', sans-serif;
+  line-height: 1.7rem;
 }
 
-.text-field:focus {
+.text-field:focus.text-field-container {
   outline: 1px solid var(--item);
 }
 
 .text-field::-webkit-scrollbar {
   width: 1.2rem;
   background-color: var(--scroll-background);
+  border-radius: 8px;
 }
 
 .text-field::-webkit-scrollbar-thumb {
-  background-color: #bbb;
   background-color: var(--scroll-bar);
   border-radius: 8px;
 }
