@@ -1,13 +1,9 @@
 import React, { useState } from 'react';
+import '../styles/TextSummarizer.css';
 
 function TextSummarizer(props) {
   const { text } = props;
-  const [inputText, setInputText] = useState(text);
   const [summary, setSummary] = useState('');
-
-  const handleInputChange = (event) => {
-    setInputText(event.target.value);
-  };
 
   const handleSummarize = () => {
     const API_KEY = 'a7fdd77a5b7574ed5bccfd7b78c940a9';
@@ -29,7 +25,6 @@ function TextSummarizer(props) {
 
   return (
     <div>
-      {/* <textarea value={inputText} onChange={handleInputChange} /> */}
       <button onClick={handleSummarize}>Summarize</button>
       <div>{summary}</div>
     </div>

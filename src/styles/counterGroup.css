@@ -6,7 +6,7 @@
 }
 
 .label {
-  background-color: var(--skyblue);
+  background-color: var(--item);
   color: #fff;
   padding: 8px 14px;
   border-radius: 5px;

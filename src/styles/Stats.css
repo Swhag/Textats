@@ -1,5 +1,8 @@
 .letter-chart {
+  background-color: var(--item-background);
   max-width: 100%;
+  padding: 10px;
+  border-radius: 15px;
 }
 
 .letter-chart-header {
@@ -37,20 +40,17 @@
   gap: 1rem;
 }
 
-@media (max-width: 1024px) {
-  .stats-group {
-    flex-direction: column;
-  }
-}
-
 .stats {
-  border: 1px solid #bdbdbd;
+  border: 1px solid var(--border);
+  background-color: var(--item-background);
+
   margin-top: 1.4rem;
   min-height: 300px;
   max-height: 400px;
   padding: 10px;
   overflow-y: scroll;
   width: 50%;
+  border-radius: 15px;
 }
 
 .w-40 {
@@ -65,10 +65,28 @@
   width: 100%;
 }
 
-@media (max-width: 1024px) {
+@media (max-width: 1200px) {
+  .stats-group {
+    flex-direction: column;
+  }
   .stats {
     width: 100%;
   }
+}
+
+.stats::-webkit-scrollbar {
+  width: 1.2rem;
+  background-color: var(--scroll-background);
+}
+
+.stats::-webkit-scrollbar-thumb {
+  background-color: #bbb;
+  background-color: var(--scroll-bar);
+  border-radius: 8px;
+}
+
+.stats::-webkit-scrollbar-thumb:hover {
+  background-color: var(--scroll-bar-hover);
 }
 
 .stats h3 {
@@ -92,7 +110,8 @@
 .stats-count {
   border-radius: 5px;
   padding: 6px 10px;
-  background-color: var(--skyblue);
+  background-color: var(--item);
+
   color: #fff;
 }
 
