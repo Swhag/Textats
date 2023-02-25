@@ -26,7 +26,7 @@ function LetterStats(props) {
       <h3>Letter Density</h3>
       {sortedStats.map(([letter, count, percent]) => (
         <div className='stats-wrapper' key={letter}>
-          <div>{letter}: </div>
+          <div className='stats-word'>{letter}: </div>
           <div className='stats-count'>
             {count.toLocaleString()}
             <span className='percent'>({percent.toFixed(2)}%)</span>

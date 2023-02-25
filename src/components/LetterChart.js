@@ -46,6 +46,12 @@ function LetterChart(props) {
   // Set sortedStats based on sortOption
   const sortedStats = handleSortChange(letterStats, sortOption);
 
+  const color = 'rgba(0, 0, 0, 0.6)';
+  const labelColor = 'rgba(0, 0, 0, 1)';
+  const gridColor = 'rgba(0, 0, 0, 0.3)';
+  const backgroundColor = 'rgba(54, 162, 235, 0.3)';
+  const borderColor = 'rgba(54, 162, 235, 1)';
+
   // Define the data for the chart
   const data = {
     labels: sortedStats.map(([letter]) => letter),
@@ -53,9 +59,8 @@ function LetterChart(props) {
       {
         label: 'Letter Count',
         data: sortedStats.map(([, count]) => count),
-
-        backgroundColor: 'rgba(54, 162, 235, 0.2)',
-        borderColor: 'rgba(54, 162, 235, 1)',
+        backgroundColor: backgroundColor,
+        borderColor: borderColor,
         borderWidth: 1,
       },
     ],
@@ -63,9 +68,33 @@ function LetterChart(props) {
 
   // Define the options for the chart
   const options = {
+    plugins: {
+      legend: {
+        labels: {
+          color: labelColor,
+          font: {
+            size: 18,
+          },
+        },
+      },
+    },
     scales: {
       y: {
         beginAtZero: true,
+        ticks: {
+          color: color,
+        },
+        grid: {
+          color: gridColor,
+        },
+      },
+      x: {
+        ticks: {
+          color: color,
+        },
+        grid: {
+          color: gridColor,
+        },
       },
     },
   };
@@ -78,7 +107,7 @@ function LetterChart(props) {
         <div>
           <label>Sort By:</label>
           <select
-            className='selectPicker'
+            className='select-picker'
             value={sortOption}
             onChange={(e) => {
               setSortOption(e.target.value);
