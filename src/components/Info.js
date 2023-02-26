@@ -27,31 +27,35 @@ function Info(props) {
   }, [messages.length]);
 
   return (
-    <div className='info'>
-      Did you know?
-      <p
-        className={`info-message ${isMessageVisible ? 'fade-in' : ''}`}
-        key={currentMessageIndex}
-      >
-        {messages[currentMessageIndex]}
-      </p>
-      <p>
-        Text Analyzer is a simple tool designed to assist students, writers, and
-        social media enthusiasts with their text-related needs. With Text
-        Analyzer, users can easily analyze their text and obtain valuable
-        insights such as the total character count, the total character count
-        without spaces, and the number of words in their text. The app also
-        features a letter occurrence graph chart, keyword density analysis, and
-        a lists sorted words by length.
-      </p>
-      <p>
-        Whether you're a student working on a research paper or a social media
-        enthusiast crafting the perfect tweet within the 280 character limit,
-        Text Analyzer can help you achieve your goals. Additionally, Text
-        Analyzer can generate a quick summary of your text, saving you time and
-        effort in the writing process.
-      </p>
-    </div>
+    <>
+      <div className='message-container'>
+        <h2>Fun Facts</h2>
+        <p
+          className={`info-message ${isMessageVisible ? 'fade-in' : ''}`}
+          key={currentMessageIndex}
+        >
+          {messages[currentMessageIndex]}
+        </p>
+      </div>
+      <div className='info'>
+        <p>
+          Text Analyzer is a simple tool designed to assist students, writers,
+          and social media enthusiasts with their text-related needs. With Text
+          Analyzer, users can easily analyze their text and obtain valuable
+          insights such as the total character count, the total character count
+          without spaces, and the number of words in their text. The app also
+          features a letter occurrence graph chart, keyword density analysis,
+          and a lists sorted words by length.
+        </p>
+        <p>
+          Whether you're a student working on a research paper or a social media
+          enthusiast crafting the perfect tweet within the 280 character limit,
+          Text Analyzer can help you achieve your goals. Additionally, Text
+          Analyzer can generate a quick summary of your text, saving you time
+          and effort in the writing process.
+        </p>
+      </div>
+    </>
   );
 }
 
