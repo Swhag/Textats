@@ -46,7 +46,7 @@ function Info(props) {
       </p>
       <p>
         Whether you're a student working on a research paper or a social media
-        enthusiast crafting the perfect tweet within the 280-character limit,
+        enthusiast crafting the perfect tweet within the 280 character limit,
         Text Analyzer can help you achieve your goals. Additionally, Text
         Analyzer can generate a quick summary of your text, saving you time and
         effort in the writing process.
