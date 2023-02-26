@@ -1,5 +1,4 @@
 import React from 'react';
-import '../styles/counterGroup.css';
 
 function CounterGroup(props) {
   const { text } = props;
