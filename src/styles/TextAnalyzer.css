@@ -149,21 +149,42 @@
 /* ---------------------------------------- */
 /* Info Component styling */
 /* ---------------------------------------- */
+.message-container {
+  background-color: var(--background);
+  color: var(--font-sub);
+
+  max-width: 690px;
+  padding: 2rem;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+
+  font-size: 1.2rem;
+  line-height: 2rem;
+  border-radius: 15px;
+}
+
+.message-container h2 {
+  margin-bottom: 2rem;
+}
+
+.message-container p {
+  min-height: 100px;
+}
 
 .info {
   background-color: var(--background);
-  border-radius: 15px;
+  color: var(--font-sub);
 
   max-width: 690px;
-  color: var(--font-sub);
-  line-height: 2rem;
-  font-size: 1.2rem;
   padding: 2rem;
+
+  font-size: 1.2rem;
+  line-height: 2rem;
+  border-radius: 15px;
 }
 
 .info p {
   margin-bottom: 2rem;
-  min-height: 4rem;
 }
 
 .info-message {
@@ -173,7 +194,7 @@
 @keyframes fadeIn {
   from {
     opacity: 0;
-    transform: translateX(-10%);
+    transform: translateX(-5%);
   }
   to {
     opacity: 1;
@@ -182,12 +203,13 @@
 }
 
 @media only screen and (max-width: 767px) {
-  .info p {
+  .message-container p {
+    margin-top: 0rem;
     margin-bottom: 0rem;
     min-height: 0rem;
   }
 
-  .info p:not(:first-of-type) {
+  .info {
     display: none;
   }
 }
