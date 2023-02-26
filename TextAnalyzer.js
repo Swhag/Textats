@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import '../styles/TextAnalyzer.css';
 
 import TextField from './TextField';
@@ -6,7 +6,6 @@ import LetterChart from './LetterChart';
 import Stats from './Stats';
 import TextSummarizer from './TextSummarizer';
 import Info from './Info';
-import ScrollTop from './ScrollTop';
 
 // --------------------------------------------------------------------
 // JavaScript functions
@@ -178,8 +177,6 @@ function TextAnalyzer() {
           />
         </div>
       </div>
-
-      <ScrollTop />
     </div>
   );
 }
