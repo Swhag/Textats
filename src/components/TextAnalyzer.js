@@ -2,10 +2,10 @@ import React, { useState } from 'react';
 import '../styles/TextAnalyzer.css';
 
 import TextField from './TextField';
-import CounterGroup from './CounterGroup';
 import LetterChart from './LetterChart';
 import Stats from './Stats';
 import TextSummarizer from './TextSummarizer';
+import Info from './Info';
 
 // --------------------------------------------------------------------
 // JavaScript functions
@@ -164,8 +164,8 @@ function TextAnalyzer() {
       <div className='content-container'>
         <div className='content-left'>
           <TextField text={text} handleTextChange={handleTextChange} />
-          <CounterGroup text={text} />
           <TextSummarizer text={text} />
+          <Info />
         </div>
 
         <div className='content-right'>
