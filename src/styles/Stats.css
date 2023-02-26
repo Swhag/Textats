@@ -32,6 +32,7 @@
   border: 1px solid var(--border);
 
   width: 100%;
+
   margin-top: 1.4rem;
   padding: 0px 0px 5px 5px;
 
@@ -40,17 +41,20 @@
 }
 
 .stats-container h3 {
+  border-bottom: 1px solid #bdbdbd;
   text-align: center;
   padding-top: 8px;
+  padding-bottom: 5px;
 }
 
 .stats {
   background-color: transparent;
-  min-height: 300px;
-  max-height: 400px;
-  width: 100%;
-  padding: 10px;
 
+  padding: 0 10px 10px 10px;
+
+  width: 100%;
+  min-height: 200px;
+  max-height: 400px;
   overflow-y: scroll;
 }
 
@@ -68,7 +72,7 @@
   }
 }
 
-@media (max-width: 1200px) {
+@media (max-width: 1400px) {
   .stats-group {
     flex-direction: column;
   }
@@ -115,15 +119,12 @@
   width: 60%;
   word-wrap: break-word;
   margin-right: 10px;
-  font-size: 1.2rem;
+  font-size: 1.1rem;
 }
 
 .stats-count {
   border-radius: 5px;
   padding: 6px 10px;
-  background-color: var(--item);
-
-  color: #fff;
 }
 
 .stats-count .percent {

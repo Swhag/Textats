@@ -1,17 +1,17 @@
 :root {
-  /* --border: #bdbdbd; */
+  --font-main: rgba(0, 0, 0, 0.7);
+  --font-sub: rgba(255, 255, 255, 1);
 
-  --background: rgba(255, 255, 255, 0.3);
+  --background: rgba(255, 255, 255, 0.8);
   --background: rgba(0, 0, 0, 0.1);
 
   --item-background: rgba(0, 0, 0, 0.2);
-  --item-background: rgba(255, 255, 255, 0.7);
+  --item-background: rgba(255, 255, 255, 0.8);
 
-  --font: rgba(0, 0, 0, 0.7);
-  --item: rgba(13, 71, 161, 0.7);
+  --item: rgba(0, 0, 0, 0.25);
 
-  --scroll-bar: rgba(13, 71, 161, 0.6);
-  --scroll-bar-hover: rgba(13, 71, 161, 0.8);
+  --scroll-bar: rgba(110, 110, 230, 0.8);
+  --scroll-bar-hover: rgba(110, 110, 230, 1);
   --scroll-background: rgba(0, 0, 0, 0.1);
 }
 
@@ -23,24 +23,29 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 
-  background-image: linear-gradient(
-    to right bottom,
-    #aa8fd8,
-    #9a9ae1,
-    #9ea6e6,
-    #a4b1ea,
-    #acbced,
-    #c5cbf1
-  );
-
   /* background-image: linear-gradient(
-    to right,
-    rgb(154, 154, 225),
-    rgb(0, 132, 161),
-    rgb(219, 0, 122)
+    to right bottom,
+    #9377bf,
+    #897fcd,
+    #8a88d3,
+    #8e93d7,
+    #939edc,
+    #a7b1e4
   ); */
 
-  background-color: rgba(154, 154, 225, 0.9);
+  background-image: linear-gradient(
+    to right bottom,
+    #7a5c9f,
+    #6d65ab,
+    #6e6fb0,
+    #7181b5,
+    #7490bb,
+    #8ba3c6
+  );
+
+  min-height: 100vh;
+
+  background-color: rgba(110, 110, 230, 1);
   color: var(--font);
 }
 
