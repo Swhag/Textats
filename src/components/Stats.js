@@ -8,9 +8,6 @@ function Stats(props) {
     <div className='stats-section'>
       <div className='stats-group'>
         <LetterStats letterStats={letterStats} />
-      </div>
-
-      <div className='stats-group'>
         <WordStats wordStats={wordStats} />
       </div>
 
@@ -112,7 +109,7 @@ function WordStatsLength(props) {
   });
 
   return (
-    <div className='stats-container w60'>
+    <div className='stats-container w100'>
       <div className='stats-header'>
         <h3>Word Lengths</h3>
 

@@ -196,6 +196,7 @@
     margin-top: 0rem;
     margin-bottom: 0rem;
     min-height: 0rem;
+    min-height: 120px;
   }
 
   .info {
