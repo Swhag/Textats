@@ -100,51 +100,61 @@
 /* stats scroll toggle styling */
 /* ---------------------------------------- */
 
-.switch {
-  position: relative;
-  display: inline-block;
-  width: 3.3rem;
-  height: 1.5rem;
+.toggle {
+  --width: 6.5rem;
+  --height: calc(var(--width) / 3);
+  --border-radius: calc(var(--height) / 2);
+
+  width: var(--width);
   margin-left: auto;
-}
-
-.switch input {
-  opacity: 0;
-  width: 0;
-  height: 0;
-}
-
-.slider {
-  position: absolute;
+  display: inline-block;
   cursor: pointer;
+}
+
+.toggle-input {
+  display: none;
+}
+
+.toggle-fill {
+  background-color: #757575;
+  border-radius: var(--border-radius);
+
+  position: relative;
+  width: var(--width);
+  height: var(--height);
+  padding-left: 10px;
+  padding-right: 2px;
+
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+
+  transition: background 0.2s;
+}
+
+.toggle-fill::after {
+  content: '';
+  position: absolute;
   top: 0;
   left: 0;
-  right: 0;
-  bottom: 0;
-  background-color: #a5a5a5;
-  transition: 0.3s;
-  border-radius: 15px;
+  height: var(--height);
+  width: calc(var(--width) / 2);
+  background: #fff;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  border-radius: var(--border-radius);
+  transition: transform 0.2s;
 }
 
-.slider:before {
-  position: absolute;
-  content: '';
-  width: 1.8rem;
-  height: 1.5rem;
-
-  left: 0;
-  bottom: 0;
-  background-color: #fff;
-  transition: 0.3s;
-  border-radius: 15px;
+.toggle-input:checked ~ .toggle-fill {
+  background-color: rgba(50, 205, 50, 0.8);
 }
 
-input:checked + .slider {
-  background-color: rgba(50, 205, 50, 0.5);
+.toggle-input:checked ~ .toggle-fill::after {
+  transform: translateX(calc(var(--height) * 1.5));
 }
 
-input:checked + .slider:before {
-  transform: translateX(1.55rem);
+.status {
+  color: #fff;
 }
 
 /* ---------------------------------------- */

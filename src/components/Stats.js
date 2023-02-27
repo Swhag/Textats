@@ -29,13 +29,17 @@ function LetterStats(props) {
       <div className='stats-header'>
         <h3>Letter Density</h3>
 
-        <label className='switch'>
+        <label className='toggle'>
           <input
+            className='toggle-input'
             type='checkbox'
             checked={slideOn}
             onChange={() => setSlideOn(!slideOn)}
           />
-          <span className='slider'></span>
+          <div className='toggle-fill'>
+            <span className='status'>On</span>
+            <span className='status'>More</span>
+          </div>
         </label>
       </div>
 
@@ -65,13 +69,17 @@ function WordStats(props) {
       <div className='stats-header'>
         <h3>Keyword Density</h3>
 
-        <label className='switch'>
+        <label className='toggle'>
           <input
+            className='toggle-input'
             type='checkbox'
             checked={slideOn}
             onChange={() => setSlideOn(!slideOn)}
           />
-          <span className='slider'></span>
+          <div className='toggle-fill'>
+            <span className='status'>On</span>
+            <span className='status'>More</span>
+          </div>
         </label>
       </div>
       <div className={`stats ${slideOn ? 'slide-on' : ''}`}>
@@ -88,6 +96,7 @@ function WordStats(props) {
     </div>
   );
 }
+
 function WordStatsLength(props) {
   const { uniqueWords } = props;
   const [slideOn, setSlideOn] = useState(false);
@@ -112,14 +121,17 @@ function WordStatsLength(props) {
     <div className='stats-container w100'>
       <div className='stats-header'>
         <h3>Word Lengths</h3>
-
-        <label className='switch'>
+        <label className='toggle'>
           <input
+            className='toggle-input'
             type='checkbox'
             checked={slideOn}
             onChange={() => setSlideOn(!slideOn)}
           />
-          <span className='slider'></span>
+          <div className='toggle-fill'>
+            <span className='status'>On</span>
+            <span className='status'>More</span>
+          </div>
         </label>
       </div>
       <div className={`stats ${slideOn ? 'slide-on' : ''}`}>
@@ -133,5 +145,51 @@ function WordStatsLength(props) {
     </div>
   );
 }
+
+// function WordStatsLength(props) {
+//   const { uniqueWords } = props;
+//   const [slideOn, setSlideOn] = useState(false);
+
+//   const sortedWords = uniqueWords.sort((a, b) => {
+//     // Compare by length first
+//     if (b.length !== a.length) {
+//       return b.length - a.length;
+//     }
+//     // If length is the same, compare alphabetically
+//     for (let i = 0; i < a.length; i++) {
+//       if (a[i] < b[i]) {
+//         return -1;
+//       } else if (a[i] > b[i]) {
+//         return 1;
+//       }
+//     }
+//     return 0;
+//   });
+
+//   return (
+//     <div className='stats-container w100'>
+//       <div className='stats-header'>
+//         <h3>Word Lengths</h3>
+
+//         <label className='switch'>
+//           <input
+//             type='checkbox'
+//             checked={slideOn}
+//             onChange={() => setSlideOn(!slideOn)}
+//           />
+//           <span className='slider'></span>
+//         </label>
+//       </div>
+//       <div className={`stats ${slideOn ? 'slide-on' : ''}`}>
+//         {sortedWords.map((word) => (
+//           <div className='stats-block' key={word}>
+//             <div className='stats-word'>{word} </div>
+//             <div className='stats-count'>{word.length}</div>
+//           </div>
+//         ))}
+//       </div>
+//     </div>
+//   );
+// }
 
 export default Stats;
