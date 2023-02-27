@@ -8,41 +8,23 @@ function Stats(props) {
     <div className='stats-section'>
       <div className='stats-group'>
         <LetterStats letterStats={letterStats} />
-      </div>
-
-      <div className='stats-group'>
         <WordStats wordStats={wordStats} />
       </div>
 
-      <div className='stats-group'>
-        <WordStatsLength uniqueWords={uniqueWords} />
-      </div>
+      <WordStatsLength uniqueWords={uniqueWords} />
     </div>
   );
 }
 
 function LetterStats(props) {
   const { letterStats } = props;
-  const [slideOn, setSlideOn] = useState(false);
 
   const sortedStats = letterStats.sort((a, b) => b[1] - a[1]);
 
   return (
     <div className='stats-container w40'>
-      <div className='stats-header'>
-        <h3>Letter Density</h3>
-
-        <label className='switch'>
-          <input
-            type='checkbox'
-            checked={slideOn}
-            onChange={() => setSlideOn(!slideOn)}
-          />
-          <span className='slider'></span>
-        </label>
-      </div>
-
-      <div className={`stats ${slideOn ? 'slide-on' : ''}`}>
+      <h3>Letter Density</h3>
+      <div className='stats'>
         {sortedStats.map(([letter, count, percent]) => (
           <div className='stats-block' key={letter}>
             <div className='stats-word'>{letter} </div>
@@ -56,28 +38,15 @@ function LetterStats(props) {
     </div>
   );
 }
-
 function WordStats(props) {
   const { wordStats } = props;
-  const [slideOn, setSlideOn] = useState(false);
 
   const sortedStats = wordStats.sort((a, b) => b[1] - a[1]);
 
   return (
     <div className='stats-container w60'>
-      <div className='stats-header'>
-        <h3>Keyword Density</h3>
-
-        <label className='switch'>
-          <input
-            type='checkbox'
-            checked={slideOn}
-            onChange={() => setSlideOn(!slideOn)}
-          />
-          <span className='slider'></span>
-        </label>
-      </div>
-      <div className={`stats ${slideOn ? 'slide-on' : ''}`}>
+      <h3>Keyword Density</h3>
+      <div className='stats'>
         {sortedStats.map(([word, count, percent]) => (
           <div className='stats-block' key={word}>
             <div className='stats-word'>{word} </div>
@@ -91,10 +60,11 @@ function WordStats(props) {
     </div>
   );
 }
+
 function WordStatsLength(props) {
   const { uniqueWords } = props;
-  const [slideOn, setSlideOn] = useState(false);
 
+  // sort uniqueWords by word length, shortest to longest
   const sortedWords = uniqueWords.sort((a, b) => {
     // Compare by length first
     if (b.length !== a.length) {
@@ -112,24 +82,13 @@ function WordStatsLength(props) {
   });
 
   return (
-    <div className='stats-container w60'>
-      <div className='stats-header'>
-        <h3>Word Lengths</h3>
-
-        <label className='switch'>
-          <input
-            type='checkbox'
-            checked={slideOn}
-            onChange={() => setSlideOn(!slideOn)}
-          />
-          <span className='slider'></span>
-        </label>
-      </div>
-      <div className={`stats ${slideOn ? 'slide-on' : ''}`}>
-        {sortedWords.map((word) => (
-          <div className='stats-block' key={word}>
+    <div className='stats-container'>
+      <h3>Words by Length</h3>
+      <div className='stats'>
+        {sortedWords.map((word, index) => (
+          <div className='stats-block' key={index}>
             <div className='stats-word'>{word} </div>
-            <div className='stats-count'>{word.length}</div>
+            <div className='stats-count'>{word.length} Letters</div>
           </div>
         ))}
       </div>
