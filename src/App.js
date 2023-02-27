@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-
 import TextAnalyzer from './components/TextAnalyzer';
 
 class App extends Component {
