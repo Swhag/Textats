@@ -22,7 +22,7 @@ function LetterStats(props) {
   const sortedStats = letterStats.sort((a, b) => b[1] - a[1]);
 
   return (
-    <div className='stats-container'>
+    <div className='stats-container w40'>
       <h3>Letter Density</h3>
       <div className='stats'>
         {sortedStats.map(([letter, count, percent]) => (
@@ -44,7 +44,7 @@ function WordStats(props) {
   const sortedStats = wordStats.sort((a, b) => b[1] - a[1]);
 
   return (
-    <div className='stats-container'>
+    <div className='stats-container w60'>
       <h3>Keyword Density</h3>
       <div className='stats'>
         {sortedStats.map(([word, count, percent]) => (

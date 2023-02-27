@@ -68,6 +68,30 @@ body {
   height: 100%;
 }
 
+@media (min-width: 2561px) {
+  html {
+    font-size: 100%;
+  }
+}
+
+@media (min-width: 3001px) {
+  html {
+    font-size: 120%;
+  }
+}
+
+@media (min-width: 3440px) {
+  html {
+    font-size: 150%;
+  }
+}
+
+@media (min-width: 3840px) {
+  html {
+    font-size: 170%;
+  }
+}
+
 a:link {
   text-decoration: none;
 }

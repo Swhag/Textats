@@ -3,9 +3,22 @@ import CounterGroup from './CounterGroup';
 import '../styles/TextSummarizer.css';
 
 function TextSummarizer(props) {
-  const { text } = props;
+  const { text, setText } = props;
   const [summary, setSummary] = useState('');
   const [isLoading, setIsLoading] = useState(false);
+  const [copyButtonText, setCopyButtonText] = useState('Copy');
+
+  const handleClearClick = () => {
+    setText('');
+  };
+
+  const handleCopyClick = () => {
+    navigator.clipboard.writeText(text);
+    setCopyButtonText('Copied!');
+    setTimeout(() => {
+      setCopyButtonText('Copy');
+    }, 4000);
+  };
 
   const handleSummarize = () => {
     const API_KEY = 'a7fdd77a5b7574ed5bccfd7b78c940a9';
@@ -30,19 +43,23 @@ function TextSummarizer(props) {
 
   return (
     <>
-      <div className='text-info'>
-        <CounterGroup text={text} />
-        <button className='summary-btn' onClick={handleSummarize}>
-          {isLoading ? (
-            <>
-              <div className='loading-spinner'>
-                Summarizing... <i className='fa fa-spinner fa-spin fa-lg'></i>
-              </div>
-            </>
-          ) : (
-            'Summarize Text'
-          )}
-        </button>
+      <div className='text-info-row'>
+        <CounterGroup text={text} handleClearClick={handleClearClick} />
+        <div className='button-group'>
+          <button onClick={handleClearClick}>Clear</button>
+          <button onClick={handleCopyClick}>{copyButtonText}</button>
+          <button onClick={handleSummarize}>
+            {isLoading ? (
+              <>
+                <div className='loading-spinner'>
+                  Summarizing... <i className='fa fa-spinner fa-spin fa-lg'></i>
+                </div>
+              </>
+            ) : (
+              'Summarize Text'
+            )}
+          </button>
+        </div>
       </div>
       {summary && <div className='summary'>{summary}</div>}
     </>

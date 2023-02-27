@@ -144,7 +144,7 @@ function TextAnalyzer() {
   const [wordStats, setWordStats] = useState([]);
   const [uniqueWords, setUniqueWords] = useState([]);
 
-  function handleTextChange(event) {
+  const handleTextChange = (event) => {
     const textValue = event.target.value;
     setText(textValue);
 
@@ -157,7 +157,7 @@ function TextAnalyzer() {
     const wordsArray = getWords(textValue);
     const uniqueWordsArray = [...new Set(wordsArray)];
     setUniqueWords(uniqueWordsArray);
-  }
+  };
 
   return (
     <div className='text-analyzer'>
@@ -165,7 +165,7 @@ function TextAnalyzer() {
       <div className='content-container'>
         <div className='content-left'>
           <TextField text={text} handleTextChange={handleTextChange} />
-          <TextSummarizer text={text} />
+          <TextSummarizer text={text} setText={setText} />
           <Info />
         </div>
 

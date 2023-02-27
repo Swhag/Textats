@@ -1,4 +1,31 @@
-.text-info {
+/* ---------------------------------------- */
+/* CounterGroup Component styling */
+/* ---------------------------------------- */
+
+.counter-group {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.label {
+  background-color: var(--item);
+  color: var(--font-sub);
+  padding: 8px 14px;
+  border-radius: 5px;
+  font-size: 1.2rem;
+}
+
+.counter {
+  margin-left: 6px;
+}
+
+.buttons-group {
+  display: flex;
+  gap: 1rem;
+}
+
+.text-info-row {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
@@ -6,7 +33,17 @@
   margin-bottom: 1.4rem;
 }
 
-.summary-btn {
+/* ---------------------------------------- */
+/* Summary Component styling */
+/* ---------------------------------------- */
+
+.button-group {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.8rem;
+}
+
+.button-group button {
   background-color: var(--item);
   background-color: rgba(50, 205, 50, 0.4);
   border: 1px solid rgba(50, 205, 50, 1);
@@ -15,10 +52,10 @@
 
   padding: 8px 14px;
   border-radius: 15px;
-  font-size: 1.2rem;
+  font-size: 1.1rem;
 }
 
-.summary-btn:hover {
+.button-group button:hover {
   background-color: rgba(50, 205, 50, 0.5);
 }
 
