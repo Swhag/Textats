@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 import TextAnalyzer from './components/TextAnalyzer';
 
 function App() {
