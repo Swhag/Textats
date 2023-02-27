@@ -109,6 +109,9 @@
   margin-left: auto;
   display: inline-block;
   cursor: pointer;
+
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  -webkit-tap-highlight-color: transparent;
 }
 
 .toggle-input {
@@ -116,7 +119,7 @@
 }
 
 .toggle-fill {
-  background-color: #757575;
+  background-color: #616161;
   border-radius: var(--border-radius);
 
   position: relative;
