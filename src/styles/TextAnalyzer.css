@@ -165,6 +165,10 @@
   margin-bottom: 2rem;
 }
 
+.info .bold {
+  font-weight: bold;
+}
+
 .info-message {
   animation: fadeIn 1s;
 }

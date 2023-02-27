@@ -39,20 +39,20 @@ function Info(props) {
       </div>
       <div className='info'>
         <p>
-          Text Analyzer is a simple tool designed to assist students, writers,
-          and social media enthusiasts with their text-related needs. With Text
-          Analyzer, users can easily analyze their text and obtain valuable
-          insights such as the total character count, the total character count
-          without spaces, and the number of words in their text. The app also
-          features a letter occurrence graph chart, keyword density analysis,
-          and a lists sorted words by length.
+          <span className='bold'>Textats</span> is a tool designed to assist
+          students, writers, and social media enthusiasts with their
+          text-related needs. With Textats, users can easily analyze their text
+          and obtain valuable insights such as the character count (with and
+          without spaces), and the number of words. The app also features a
+          letter occurrence graph, keyword density analysis, and lists of words
+          sorted by length.
         </p>
         <p>
           Whether you're a student working on a research paper or a social media
           enthusiast crafting the perfect tweet within the 280 character limit,
-          Text Analyzer can help you achieve your goals. Additionally, Text
-          Analyzer can generate a quick summary of your text, saving you time
-          and effort in the writing process.
+          Textats can help you achieve your goals. You can also use this to
+          generate a quick summary of your text, saving you time and effort in
+          the writing process.
         </p>
       </div>
     </>
