@@ -24,7 +24,7 @@ Textats is an easy-to-use tool that helps users analyze their text. It provides 
 
   - [React](https://reactjs.org/)
 
-  ### Tools
+### Tools
 
 - [ChartJS](https://www.chartjs.org/)
 - [MeaningCloud API](https://www.meaningcloud.com/developer/)
