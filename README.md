@@ -30,3 +30,5 @@ Textats is an easy-to-use tool that helps users analyze their text. It provides 
 - [MeaningCloud API](https://www.meaningcloud.com/developer/)
 - [ESLint](https://eslint.org/)
 - [Prettier](https://prettier.io/)
+
+https://user-images.githubusercontent.com/109196962/221492352-6ca7ecdc-38f0-499b-8a50-9ec855958c46.mp4
