@@ -161,7 +161,7 @@ function TextAnalyzer() {
 
   return (
     <div className='text-analyzer'>
-      <h1>Text Analyzer</h1>
+      <h1>Textats - Text Analyzer</h1>
       <div className='content-container'>
         <div className='content-left'>
           <TextField text={text} handleTextChange={handleTextChange} />
