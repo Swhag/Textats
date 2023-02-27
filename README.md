@@ -16,7 +16,7 @@ Textats is an easy-to-use tool that helps users analyze their text. It provides 
 - Letter occurrence graph chart (chartJS Library)
 - keyword density
 - Sort words by length.
-- Generate a quick summary of the text (Makes MeaningCloud API calls)
+- Generate a quick summary of the text (MeaningCloud API calls)
 
 ### Frameworks
 
