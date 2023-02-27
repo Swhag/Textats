@@ -80,15 +80,6 @@
   .stats-group {
     gap: 0rem;
   }
-
-  .stats {
-    overflow-y: hidden;
-  }
-  /* apply styles only on devices with max width of 767px */
-  .stats:focus,
-  .stats:active {
-    overflow-y: scroll;
-  }
 }
 
 /* ---------------------------------------- */
